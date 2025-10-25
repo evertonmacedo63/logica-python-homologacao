@@ -1,13 +1,18 @@
 name: Testar Código Python
-on: [push]
-  jobs:
-    build:
-      runs-on: widows-latest
-      steps:
-        - uses: actions/checkout@v3
-        - uses: actions/setup-python@v4
-          with:
-            python-version: '3.10'
-        - name: Exceutar script
-          run: python semana1_exerciicios.py
+
+on: 
+  push:
+    
+    jobs:
+      build:
+        runs-on: windows-latest
+        
+        steps:
+          - uses: actions/checkout@v3
           
+          - uses: actions/setup-python@v4
+            with:
+              python-version: '3.10'
+              
+          - name: Executar script
+            run: python semana1_exercicios.py   
